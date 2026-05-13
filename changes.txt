@@ -1,0 +1,50 @@
+[v1.0 -> v1.1]
+* Bug fixes:
+1. Server exception handling: server now checks for unexpected client application exits in the match (doesn't throw errors; closes the client's comm threads nicely).
+2. Reprogrammed queueing system on the server and bots now have their seats reserved (players cannot occupy those places).
+3. Fixed the troop disappearance bug.
+4. Client exception handling: server connection losses, other players abandoning the match, etc.
+
+* Updates:
+1. Changed server comms port to 443 and ASCII format for potentially less delay.
+2. Language selection (EN/LT) buttons in the menu; clearer code.
+3. Cities and troops are now contained in a dictionary (instead of a list) for faster indexing.
+4. Plenty of variables used commonly by several PY files moved to a separate file (less code repetition).
+5. FPS is now equalized across all the screens.
+6. Menu, loading (waiting) and ending windows are now separate PY files (effectiveness, readability).
+7. Implemented intermediary cities to lead the troops around the water when traveling between territories where needed.
+8. The file directory is now more structured (images and sounds are grouped by game stages).
+9. Client-server communication was enhanced - server now accepts messages from clients in one single function at any game stage (code clarity).
+10. Troop collision is now checked only between troops from nearby locations (faster) and the checking/calculation function is more efficient.
+11. Surrounding greyed-out territories were drawn on the map for visual looks.
+12. Each bot runs on a separate CPU core (less stress on the server).
+13. Minor upgraded city appearance changes; adjusted building price (in troops) and its production boost.
+14. Massively improved bot logic (they are now much smarter).
+
+* New features:
+1. The players now cannot appear right next to each other at the beginning.
+2. The menu is now reconstructed and the UI speed has increased.
+3. Enhanced waiting screen: 'Cancel' and 'Fill with bots' buttons; information on the number of players joined.
+4. Only the game host can fill the game with bots (others have to wait).
+5. Large areas are now split into smaller ones to even out the probability of winning when spawned at either end of the map.
+6. Improved targeting looks for sending troops (easier to see where and which path they will be led across).
+7. Player/bot names with their respective color indications are now visible in the match.
+8. Menu interface for changing the player's name and the IP address of the local game server.
+9. Introduced game guide.
+
+
+
+
+
+
+[v1.1 -> v1.1.1]
+* Bug fixes:
+1. A city now automatically unchecks itself in case of an adversary occupation if the player hasn't decided where to send the selected city's troops yet. 
+
+* Updates:
+1. Minimal changes to the aiming reticle; it spins now.
+2. After starting to fill match with bots, players cannot press 'cancel' anymore.
+
+* New features:
+1. Introduced nuclear missiles and gold reserve to purchase them.
+2. Bot strength can be altered in game waiting menu.
